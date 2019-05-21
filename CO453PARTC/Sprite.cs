@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace CO453PARTC
 {
     class Sprite
     {
         private int maxnImages = 0;
-
-        private Image[] images;
-
         private int currentImageNo = 0;
+        private Image[] images;
+        public int Speed { get; set; }
 
         public Sprite(int maxnImages)
         {
@@ -21,6 +15,9 @@ namespace CO453PARTC
             images = new Image[maxnImages];
         }
 
+        /// <summary>
+        /// This method will load the images.
+        /// </summary>
         public void LoadImages(string baseName)
         {
             for (int count = 0; count < maxnImages; count++)
@@ -29,6 +26,9 @@ namespace CO453PARTC
             }
         }
 
+        /// <summary>
+        /// This method will get the next image (gif).
+        /// </summary>
         public Image GetNextImage()
         {
             Image image = images[currentImageNo];
